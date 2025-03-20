@@ -23,7 +23,7 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <2 3>;
+            if-layers = <4 4>;
             then-layer = <4>;
         };
     };
@@ -46,7 +46,7 @@
 &kp TAB     &kp Q               &kp W      &kp E        &kp R          &kp T                                           &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
 &kp LSHIFT  &kp A               &kp S      &kp D        &kp F          &kp G                                           &kp H         &kp J             &kp K            &kp L                    &kp SEMI                  &kp SQT
 &kp GRAVE   &kp Z               &kp X      &kp C        &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL  &kp LALT     &kp LCMD       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
+                                &kp LCTRL  &kp LALT     &kp LCMD       &mo 0           &kp SPACE     &kp ENTER         &mo 0         &kp RSHIFT        &kp RCMD         &kp RALT
             >;
 
             sensor-bindings =
@@ -69,42 +69,25 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        lower {
+        nav {
             display-name = "lower";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
             bindings = <
-&none         &kp F1           &kp F2     &kp F3    &kp F4      &kp F5                           &kp F6                &kp F7                 &kp F8        &kp F9     &kp F10   &kp F11
-&kp GRAVE     &kp EXCLAMATION  &kp AT     &kp HASH  &kp DOLLAR  &kp PRCNT                        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp ASTERISK  &kp SLASH  &none     &kp F12
-&none         &kp EQUAL        &kp ASTRK  &kp FSLH  &kp MINUS   &kp PLUS                         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTRK     &kp PIPE   &none     &none
-&kp CAPSLOCK  &none            &none      &none     &kp CARET   &kp AMPERSAND  &none     &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI      &kp COLON  &kp BSLH  &none
-                               &none      &none     &none       &trans         &trans    &trans  &trans                &none                  &none         &none
+&none         &kp F1              &kp F2           &kp F3       &kp F4       &kp F5                                &kp F6           &kp F7             &kp F8        &kp F9           &kp F10  &kp F11
+&none         &none               &kp LS(LC(TAB))  &kp LC(TAB)  &kp PAGE_UP  &kp PAGE_DOWN                         &kp PRINTSCREEN  &none              &none         &none            &none    &kp F12
+&caps_word    &none               &kp LS(LG(TAB))  &kp LG(TAB)  &kp HOME     &kp END                               &kp LEFT_ARROW   &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
+&kp CAPSLOCK  &kp LC(LA(DELETE))  &kp LA(LS(TAB))  &kp LA(TAB)  &kp DELETE   &kp BACKSPACE  &none          &none   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE    &none            &none    &none
+                                  &none            &none        &none        &trans         &key_repeat    &trans  &trans           &none              &none         &none
             >;
         };
 
-        raise {
+        symbol {
             display-name = "raise";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
-
             bindings = <
-&none  &none       &none      &none        &none        &none                     &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &none         &none      &none  &kp PAGE_UP
-&none  &none       &kp PSCRN  &kp K_CMENU  &none        &none                     &kp QUESTION       &kp UNDERSCORE    &kp MINUS     &kp SLASH  &none  &kp PAGE_DOWN
-&none  &none       &none      &none        &none        &none                     &kp LEFT_ARROW     &kp DOWN_ARROW    &kp UP_ARROW  &kp RIGHT  &none  &kp HOME
-&none  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &none   &none     &none   &kp COLON          &kp EQUAL         &none         &none      &none  &kp END
-                   &none      &none        &none        &trans  &trans    &trans  &trans             &caps_word        &none         &none
+&none  &none  &none  &none  &none                 &none                                    &kp QUESTION       &none             &none           &none          &none  &none
+&none  &none  &none  &none  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp LESS_THAN      &kp GREATER_THAN  &kp PIPE        &none          &none  &none
+&none  &none  &none  &none  &kp LBKT              &kp RBKT                                 &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp SLASH       &kp BACKSLASH  &none  &none
+&none  &none  &none  &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none   &kp COLON          &kp EQUAL         &kp UNDERSCORE  &none          &none  &none
+              &none  &none  &none                 &trans                 &trans    &trans  &trans             &none             &none           &none
             >;
         };
 
@@ -118,11 +101,11 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &none   &none  &none  &none  &none  &none
-&ext_power EP_TOG  &none         &none         &none         &none         &none                             &none   &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &none                             &none   &none  &none  &none  &none  &none
-&soft_off          &none         &none         &none         &none         &studio_unlock  &none     &none   &none   &none  &none  &none  &none  &none
-                                 &none         &none         &none         &trans          &tog 0    &tog 1  &trans  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none   &none  &none  &none  &none  &none
+&ext_power EP_TOG  &none         &none         &none         &none         &none                           &none   &none  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &none                           &none   &none  &none  &none  &none  &none
+&soft_off          &none         &none         &none         &none         &none         &none     &none   &none   &none  &none  &none  &none  &none
+                                 &none         &none         &none         &trans        &tog 0    &tog 1  &trans  &none  &none  &none
             >;
         };
     };
