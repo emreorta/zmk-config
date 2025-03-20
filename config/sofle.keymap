@@ -28,6 +28,227 @@
         };
     };
 
+    behaviors {
+        lhrm: lhrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
+
+        rhrm: rhrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <18 6>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <20 8>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <21 9>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        question_mark {
+            bindings = <&kp QUESTION>;
+            key-positions = <28 29>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        underscore {
+            bindings = <&kp UNDER>;
+            key-positions = <30 31>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <44 45>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <32 31>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <45 46>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <46 47>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        left_parenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <32 33>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <20 21>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <47 48>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        right_parenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <33 34>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <22 21>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        slash {
+            bindings = <&kp SLASH>;
+            key-positions = <30 18>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <19 31>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <20 32>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        double_quotes {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <30 44>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        single_quotes {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <31 45>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        less_than {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <32 46>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        greater_than {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <33 47>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        exclamation_mark {
+            bindings = <&kp EXCLAMATION>;
+            key-positions = <1 13>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        at_sign {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <2 14>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <3 15>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <4 16>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <5 17>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <40 41>;
+            require-prior-idle-ms = <75>;
+            layers = <0 1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -42,11 +263,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC     &mt EXCLAMATION N1  &mt AT N2  &mt HASH N3  &mt DOLLAR N4  &mt PERCENT N5                                  &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB     &kp Q               &kp W      &kp E        &kp R          &kp T                                           &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHIFT  &kp A               &kp S      &kp D        &kp F          &kp G                                           &kp H         &kp J             &kp K            &kp L                    &kp SEMI                  &kp SQT
-&kp GRAVE   &kp Z               &kp X      &kp C        &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL  &kp LALT     &kp LCMD       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
+&kp ESC     &mt EXCLAMATION N1  &mt AT N2     &mt HASH N3   &mt DOLLAR N4  &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
+&kp TAB     &kp Q               &kp W         &kp E         &kp R          &kp T                                                        &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
+&kp LSHIFT  &lhrm LCTRL A       &lhrm LALT S  &lhrm LCMD D  &lhrm LSHFT F  &kp G                                                        &kp H         &rhrm RSHIFT J    &rhrm RGUI K     &rhrm RALT L             &rhrm RCTRL SEMI          &kp SQT
+&kp GRAVE   &kp Z               &kp X         &kp C         &kp V          &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
+                                &kp LCTRL     &kp LALT      &kp LCMD       &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
             >;
 
             sensor-bindings =
@@ -57,11 +278,11 @@
         linux {
             display-name = "linux";
             bindings = <
-&kp ESC    &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3  &mt DOLLAR N4  &mt PERCENT N5                                  &mt CARET N6  &mt AMPS N7      &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB    &kp Q               &kp W           &kp E        &kp R          &kp T                                           &kp Y         &kp U            &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHFT  &kp A               &kp S           &kp D        &kp F          &kp G                                           &kp H         &kp J            &kp K            &kp L                    &kp SEMI                  &kp SQT
-&kp GRAVE  &kp Z               &kp X           &kp C        &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M            &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                               &kp LCTRL       &kp LGUI     &kp LALT       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
+&kp ESC    &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4  &mt PERCENT N5                                  &mt CARET N6  &mt AMPS N7      &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
+&kp TAB    &kp Q               &kp W           &kp E         &kp R          &kp T                                           &kp Y         &kp U            &kp I            &kp O                    &kp P                     &kp BSPC
+&kp LSHFT  &lhrm LCTRL A       &lhrm LGUI S    &lhrm LALT D  &lhrm LSHFT F  &kp G                                           &kp H         &rhrm RSHIFT J   &rhrm LALT K     &rhrm RGUI L             &rhrm RCTRL SEMI          &kp SQT
+&kp GRAVE  &kp Z               &kp X           &kp C         &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M            &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
+                               &kp LCTRL       &kp LGUI      &kp LALT       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
             >;
 
             sensor-bindings =
@@ -69,42 +290,27 @@
                 <&inc_dec_kp PG_UP PG_DN>;
         };
 
-        lower {
-            display-name = "lower";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  F12  |
-            // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
-            // |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
-
+        nav {
+            display-name = "nav";
             bindings = <
-&none         &kp F1           &kp F2     &kp F3    &kp F4      &kp F5                           &kp F6                &kp F7                 &kp F8        &kp F9     &kp F10   &kp F11
-&kp GRAVE     &kp EXCLAMATION  &kp AT     &kp HASH  &kp DOLLAR  &kp PRCNT                        &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp ASTERISK  &kp SLASH  &none     &kp F12
-&none         &kp EQUAL        &kp ASTRK  &kp FSLH  &kp MINUS   &kp PLUS                         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp ASTRK     &kp PIPE   &none     &none
-&kp CAPSLOCK  &none            &none      &none     &kp CARET   &kp AMPERSAND  &none     &none   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMI      &kp COLON  &kp BSLH  &none
-                               &none      &none     &none       &trans         &trans    &trans  &trans                &none                  &none         &none
+&kp LC(LS(SPACE))  &kp F1  &kp F2            &kp F3        &kp F4      &kp F5                                &kp F6           &kp F7             &kp F8        &kp F9           &kp F10     &kp F11
+&kp LC(LG(Q))      &none   &none             &none         &none       &none                                 &kp HOME         &kp END            &kp PAGE_UP   &kp PAGE_DOWN    &kp INSERT  &kp F12
+&caps_word         &trans  &trans            &trans        &trans      &kp ENTER                             &kp LEFT_ARROW   &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &none       &none
+&kp CAPSLOCK       &none   &none             &none         &kp DELETE  &kp BACKSPACE  &none          &none   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_MUTE    &none            &none       &none
+                           &kp LS(LEFT_GUI)  &kp LS(LALT)  &kp LALT    &trans         &key_repeat    &trans  &trans           &none              &none         &none
             >;
+
+            label = "nav";
         };
 
-        raise {
-            display-name = "raise";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
-
+        symbol {
+            display-name = "symbol";
             bindings = <
-&none  &none       &none      &none        &none        &none                     &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &none         &none      &none  &kp PAGE_UP
-&none  &none       &kp PSCRN  &kp K_CMENU  &none        &none                     &kp QUESTION       &kp UNDERSCORE    &kp MINUS     &kp SLASH  &none  &kp PAGE_DOWN
-&none  &none       &none      &none        &none        &none                     &kp LEFT_ARROW     &kp DOWN_ARROW    &kp UP_ARROW  &kp RIGHT  &none  &kp HOME
-&none  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &none   &none     &none   &kp COLON          &kp EQUAL         &none         &none      &none  &kp END
-                   &none      &none        &none        &trans  &trans    &trans  &trans             &caps_word        &none         &none
+&none  &none  &none  &none      &none                 &none                                    &kp LESS_THAN      &kp GREATER_THAN  &none           &none          &none  &none
+&none  &none  &none  &none      &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp QUESTION       &kp EXCLAMATION   &kp PIPE        &none          &none  &none
+&none  &none  &none  &kp PLUS   &kp LBKT              &kp RBKT                                 &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp SLASH       &kp BACKSLASH  &none  &none
+&none  &none  &none  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none   &kp COLON          &kp EQUAL         &kp UNDERSCORE  &none          &none  &none
+              &none  &none      &none                 &trans                 &trans    &trans  &trans             &none             &none           &none
             >;
         };
 
@@ -118,11 +324,11 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                      &none   &none  &none  &none  &none  &none
-&ext_power EP_TOG  &none         &none         &none         &none         &none                             &none   &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &none                             &none   &none  &none  &none  &none  &none
-&soft_off          &none         &none         &none         &none         &studio_unlock  &none     &none   &none   &none  &none  &none  &none  &none
-                                 &none         &none         &none         &trans          &tog 0    &tog 1  &trans  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none        &none  &none  &none  &none  &none
+&ext_power EP_TOG  &none         &none         &none         &none         &none                           &none        &none  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &bootloader                     &bootloader  &none  &none  &none  &none  &none
+&soft_off          &none         &none         &none         &none         &sys_reset    &none     &none   &sys_reset   &none  &none  &none  &none  &none
+                                 &none         &none         &none         &trans        &tog 0    &tog 1  &trans       &none  &none  &none
             >;
         };
     };
