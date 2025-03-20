@@ -46,7 +46,7 @@
 &kp TAB     &kp Q               &kp W      &kp E        &kp R          &kp T                                           &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
 &kp LSHIFT  &kp A               &kp S      &kp D        &kp F          &kp G                                           &kp H         &kp J             &kp K            &kp L                    &kp SEMI                  &kp SQT
 &kp GRAVE   &kp Z               &kp X      &kp C        &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL  &kp LALT     &kp LCMD       &mo 0           &kp SPACE     &kp ENTER         &mo 0         &kp RSHIFT        &kp RCMD         &kp RALT
+                                &kp LCTRL  &kp LALT     &kp LCMD       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
             >;
 
             sensor-bindings =
