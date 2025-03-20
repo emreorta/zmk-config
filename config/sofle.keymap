@@ -23,7 +23,7 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <4 4>;
+            if-layers = <2 3>;
             then-layer = <4>;
         };
     };
@@ -70,7 +70,7 @@
         };
 
         nav {
-            display-name = "lower";
+            display-name = "nav";
             bindings = <
 &none         &kp F1              &kp F2           &kp F3       &kp F4       &kp F5                                &kp F6           &kp F7             &kp F8        &kp F9           &kp F10  &kp F11
 &none         &none               &kp LS(LC(TAB))  &kp LC(TAB)  &kp PAGE_UP  &kp PAGE_DOWN                         &kp PRINTSCREEN  &none              &none         &none            &none    &kp F12
@@ -78,10 +78,12 @@
 &kp CAPSLOCK  &kp LC(LA(DELETE))  &kp LA(LS(TAB))  &kp LA(TAB)  &kp DELETE   &kp BACKSPACE  &none          &none   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE    &none            &none    &none
                                   &none            &none        &none        &trans         &key_repeat    &trans  &trans           &none              &none         &none
             >;
+
+            label = "nav";
         };
 
         symbol {
-            display-name = "raise";
+            display-name = "symbol";
             bindings = <
 &none  &none  &none  &none  &none                 &none                                    &kp QUESTION       &none             &none           &none          &none  &none
 &none  &none  &none  &none  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp LESS_THAN      &kp GREATER_THAN  &kp PIPE        &none          &none  &none
