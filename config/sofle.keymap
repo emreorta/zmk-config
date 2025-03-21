@@ -37,7 +37,7 @@
                 <&kp LGUI>,
                 <&macro_tap>,
                 <&kp LSHFT &kp TAB>,
-                <&macro_release>,
+                <&macro_pause_for_release>,
                 <&kp LGUI>;
 
             label = "PREV_WINDOW";
@@ -51,7 +51,7 @@
                 <&kp LGUI>,
                 <&macro_tap>,
                 <&kp TAB>,
-                <&macro_release>,
+                <&macro_pause_for_release>,
                 <&kp LGUI>;
 
             label = "NEXT_WINDOW";
