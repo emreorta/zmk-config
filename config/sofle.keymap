@@ -28,36 +28,6 @@
         };
     };
 
-    macros {
-        prev_window: prev_window {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp LSHFT &kp TAB>,
-                <&macro_pause_for_release>,
-                <&kp LGUI>;
-
-            label = "PREV_WINDOW";
-        };
-
-        next_window: next_window {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LGUI>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_pause_for_release>,
-                <&kp LGUI>;
-
-            label = "NEXT_WINDOW";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -102,11 +72,11 @@
         nav {
             display-name = "nav";
             bindings = <
-&none         &kp F1              &kp F2           &kp F3        &kp F4       &kp F5                                &kp F6           &kp F7             &kp F8        &kp F9           &kp F10  &kp F11
-&none         &none               &kp LS(LC(TAB))  &kp LC(TAB)   &kp PAGE_UP  &kp PAGE_DOWN                         &kp PRINTSCREEN  &none              &none         &none            &none    &kp F12
-&caps_word    &none               &prev_window     &next_window  &kp HOME     &kp END                               &kp LEFT_ARROW   &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
-&kp CAPSLOCK  &kp LC(LA(DELETE))  &kp LA(LS(TAB))  &kp LA(TAB)   &kp DELETE   &kp BACKSPACE  &none          &none   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE    &none            &none    &none
-                                  &none            &none         &none        &trans         &key_repeat    &trans  &trans           &none              &none         &none
+&none         &kp F1              &kp F2           &kp F3       &kp F4       &kp F5                                &kp F6           &kp F7             &kp F8        &kp F9           &kp F10  &kp F11
+&none         &none               &kp LS(LC(TAB))  &kp LC(TAB)  &kp PAGE_UP  &kp PAGE_DOWN                         &kp PRINTSCREEN  &none              &none         &none            &none    &kp F12
+&caps_word    &none               &none            &none        &kp HOME     &kp END                               &kp LEFT_ARROW   &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &none    &none
+&kp CAPSLOCK  &kp LC(LA(DELETE))  &kp LA(LS(TAB))  &kp LA(TAB)  &kp DELETE   &kp BACKSPACE  &none          &none   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp K_MUTE    &none            &none    &none
+                                  &none            &none        &none        &trans         &key_repeat    &trans  &trans           &none              &none         &none
             >;
 
             label = "nav";
