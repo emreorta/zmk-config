@@ -23,7 +23,7 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <3 3>;
+            if-layers = <2 3>;
             then-layer = <4>;
         };
     };
@@ -61,7 +61,7 @@
 &kp TAB     &kp Q               &kp W        &kp E        &kp R          &kp T                                                        &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
 &kp LSHIFT  &hrm LCTRL A        &hrm LALT S  &hrm LCMD D  &hrm LSHFT F   &kp G                                                        &kp H         &hrm RSHIFT J     &hrm RCMD K      &hrm LALT L              &hrm RCTRL SEMI           &kp SQT
 &kp GRAVE   &kp Z               &kp X        &kp C        &kp V          &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL    &kp LALT     &kp LCMD       &mo 3           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
+                                &kp LCTRL    &kp LALT     &kp LCMD       &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
             >;
 
             sensor-bindings =
@@ -76,7 +76,7 @@
 &kp TAB    &kp Q               &kp W           &kp E        &kp R          &kp T                                           &kp Y         &kp U            &kp I            &kp O                    &kp P                     &kp BSPC
 &kp LSHFT  &hrm LCTRL A        &hrm LGUI S     &hrm LALT D  &hrm LSHFT F   &kp G                                           &kp H         &hrm RSHIFT J    &hrm LALT K      &hrm RGUI L              &hrm RCTRL SEMI           &kp SQT
 &kp GRAVE  &kp Z               &kp X           &kp C        &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M            &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                               &kp LCTRL       &kp LGUI     &kp LALT       &mo 3           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
+                               &kp LCTRL       &kp LGUI     &kp LALT       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
             >;
 
             sensor-bindings =
@@ -120,9 +120,9 @@
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none   &none  &none  &none  &none  &none
 &ext_power EP_TOG  &none         &none         &none         &none         &none                           &none   &none  &none  &none  &none  &none
-&none              &none         &sk LCTRL     &sk LGUI      &sk LALT      &none                           &none   &none  &none  &none  &none  &none
+&none              &none         &none         &none         &none         &none                           &none   &none  &none  &none  &none  &none
 &soft_off          &none         &none         &none         &none         &none         &none     &none   &none   &none  &none  &none  &none  &none
-                                 &none         &none         &none         &trans        &tog 0    &tog 2  &trans  &none  &none  &none
+                                 &none         &none         &none         &trans        &tog 0    &tog 1  &trans  &none  &none  &none
             >;
         };
     };
