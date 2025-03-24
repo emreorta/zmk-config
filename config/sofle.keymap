@@ -23,7 +23,7 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <2 3>;
+            if-layers = <3 3>;
             then-layer = <4>;
         };
     };
@@ -57,11 +57,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC     &mt EXCLAMATION N1  &mt AT N2  &mt HASH N3  &mt DOLLAR N4  &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB     &kp Q               &kp W      &kp E        &kp R          &kp T                                                        &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHIFT  &kp A               &kp S      &kp D        &kp F          &kp G                                                        &kp H         &kp J             &kp K            &kp L                    &kp SEMI                  &kp SQT
-&kp GRAVE   &kp Z               &kp X      &kp C        &kp V          &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL  &kp LALT     &kp LCMD       &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
+&kp ESC     &mt EXCLAMATION N1  &mt AT N2    &mt HASH N3  &mt DOLLAR N4  &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
+&kp TAB     &kp Q               &kp W        &kp E        &kp R          &kp T                                                        &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
+&kp LSHIFT  &hrm LCTRL A        &hrm LALT S  &hrm LCMD D  &hrm LSHFT F   &kp G                                                        &kp H         &hrm RSHIFT J     &hrm RCMD K      &hrm LALT L              &hrm RCTRL SEMI           &kp SQT
+&kp GRAVE   &kp Z               &kp X        &kp C        &kp V          &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
+                                &kp LCTRL    &kp LALT     &kp LCMD       &mo 3           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
             >;
 
             sensor-bindings =
@@ -74,9 +74,9 @@
             bindings = <
 &kp ESC    &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3  &mt DOLLAR N4  &mt PERCENT N5                                  &mt CARET N6  &mt AMPS N7      &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
 &kp TAB    &kp Q               &kp W           &kp E        &kp R          &kp T                                           &kp Y         &kp U            &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHFT  &kp A               &hrm LCTRL S    &hrm LGUI D  &hrm LALT F    &kp G                                           &kp H         &kp J            &kp K            &kp L                    &kp SEMI                  &kp SQT
+&kp LSHFT  &hrm LCTRL A        &hrm LGUI S     &hrm LALT D  &hrm LSHFT F   &kp G                                           &kp H         &hrm RSHIFT J    &hrm LALT K      &hrm RGUI L              &hrm RCTRL SEMI           &kp SQT
 &kp GRAVE  &kp Z               &kp X           &kp C        &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M            &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                               &kp LCTRL       &kp LGUI     &kp LALT       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
+                               &kp LCTRL       &kp LGUI     &kp LALT       &mo 3           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
             >;
 
             sensor-bindings =
@@ -122,7 +122,7 @@
 &ext_power EP_TOG  &none         &none         &none         &none         &none                           &none   &none  &none  &none  &none  &none
 &none              &none         &sk LCTRL     &sk LGUI      &sk LALT      &none                           &none   &none  &none  &none  &none  &none
 &soft_off          &none         &none         &none         &none         &none         &none     &none   &none   &none  &none  &none  &none  &none
-                                 &none         &none         &none         &trans        &tog 0    &tog 1  &trans  &none  &none  &none
+                                 &none         &none         &none         &trans        &tog 0    &tog 2  &trans  &none  &none  &none
             >;
         };
     };
