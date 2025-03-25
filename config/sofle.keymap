@@ -267,7 +267,7 @@
             bindings = <
 &kp ESC     &mt EXCLAMATION N1  &mt AT N2     &mt HASH N3   &mt DOLLAR N4  &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
 &kp TAB     &kp Q               &kp W         &kp E         &kp R          &kp T                                                        &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHIFT  &lhrm LCTRL A       &lhrm LALT S  &lhrm LCMD D  &lhrm LSHFT F  &kp G                                                        &kp H         &rhrm RSHIFT J    &rhrm RCMD K     &rhrm LALT L             &rhrm RCTRL SEMI          &kp SQT
+&kp LSHIFT  &lhrm LCTRL A       &lhrm LALT S  &lhrm LCMD D  &lhrm LSHFT F  &kp G                                                        &kp H         &rhrm RSHIFT J    &rhrm RCTRL K    &rhrm LCMD L             &rhrm LALT SEMI           &kp SQT
 &kp GRAVE   &kp Z               &kp X         &kp C         &kp V          &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
                                 &kp LCTRL     &kp LALT      &kp LCMD       &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
             >;
