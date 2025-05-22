@@ -29,28 +29,54 @@
     };
 
     behaviors {
-        lhrm: lhrm {
+        lhrmpc: lhrmpc {
             compatible = "zmk,behavior-hold-tap";
-            label = "LHRM";
+            label = "LHRMPC";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             flavor = "balanced";
             hold-trigger-on-release;
         };
 
-        rhrm: rhrm {
+        rhrmpc: rhrmpc {
             compatible = "zmk,behavior-hold-tap";
-            label = "RHRM";
+            label = "RHRMPC";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
+
+        lhrmmac: lhrmmac {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHRMMAC";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+        };
+
+        rhrmmac: rhrmmac {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHRMMAC";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <175>;
             flavor = "balanced";
             hold-trigger-on-release;
         };
@@ -249,11 +275,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC     &mt EXCLAMATION N1  &mt AT N2     &mt HASH N3   &mt DOLLAR N4  &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7  &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB     &kp Q               &kp W         &kp E         &kp R          &kp T                                                        &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHIFT  &lhrm LCTRL A       &lhrm LALT S  &lhrm LCMD D  &lhrm LSHFT F  &kp G                                                        &kp H         &rhrm RSHIFT J    &rhrm RGUI K     &rhrm RALT L             &rhrm RCTRL SEMI          &kp SQT
-&kp GRAVE   &kp Z               &kp X         &kp C         &kp V          &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL     &kp LALT      &kp LCMD       &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT        &kp RCMD         &kp RALT
+&kp ESC     &mt EXCLAMATION N1  &mt AT N2        &mt HASH N3      &mt DOLLAR N4     &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7   &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
+&kp TAB     &kp Q               &kp W            &kp E            &kp R             &kp T                                                        &kp Y         &kp U              &kp I            &kp O                    &kp P                     &kp BSPC
+&kp LSHIFT  &lhrmmac LCTRL A    &lhrmmac LALT S  &lhrmmac LCMD D  &lhrmmac LSHFT F  &kp G                                                        &kp H         &rhrmmac RSHIFT J  &rhrmmac RGUI K  &rhrmmac RALT L          &rhrmmac RCTRL SEMI       &kp SQT
+&kp GRAVE   &kp Z               &kp X            &kp C            &kp V             &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
+                                &kp LCTRL        &kp LALT         &kp LCMD          &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT         &kp RCMD         &kp RALT
             >;
 
             sensor-bindings =
@@ -264,11 +290,11 @@
         linux {
             display-name = "linux";
             bindings = <
-&kp ESC    &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3   &mt DOLLAR N4  &mt PERCENT N5                                  &mt CARET N6  &mt AMPS N7      &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB    &kp Q               &kp W           &kp E         &kp R          &kp T                                           &kp Y         &kp U            &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHFT  &lhrm LCTRL A       &lhrm LGUI S    &lhrm LALT D  &lhrm LSHFT F  &kp G                                           &kp H         &rhrm RSHIFT J   &rhrm LALT K     &rhrm RGUI L             &rhrm RCTRL SEMI          &kp SQT
-&kp GRAVE  &kp Z               &kp X           &kp C         &kp V          &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M            &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                               &kp LCTRL       &kp LGUI      &kp LALT       &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT  &kp RCTRL        &kp RALT
+&kp ESC    &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3     &mt DOLLAR N4    &mt PERCENT N5                                  &mt CARET N6  &mt AMPS N7       &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
+&kp TAB    &kp Q               &kp W           &kp E           &kp R            &kp T                                           &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
+&kp LSHFT  &lhrmpc LCTRL A     &lhrmpc LGUI S  &lhrmpc LALT D  &lhrmpc LSHFT F  &kp G                                           &kp H         &rhrmpc RSHIFT J  &rhrmpc LALT K   &rhrmpc RGUI L           &rhrmpc RCTRL SEMI        &kp SQT
+&kp GRAVE  &kp Z               &kp X           &kp C           &kp V            &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
+                               &kp LCTRL       &kp LGUI        &kp LALT         &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT   &kp RCTRL        &kp RALT
             >;
 
             sensor-bindings =
