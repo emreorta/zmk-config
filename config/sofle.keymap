@@ -318,11 +318,11 @@
         symbol {
             display-name = "symbol";
             bindings = <
-&none  &none  &none  &none      &none                 &none                                    &kp LESS_THAN      &kp GREATER_THAN  &none           &none          &none  &none
-&none  &none  &none  &none      &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp QUESTION       &kp EXCLAMATION   &kp PIPE        &none          &none  &none
-&none  &none  &none  &kp PLUS   &kp LBKT              &kp RBKT                                 &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp SLASH       &kp BACKSLASH  &none  &none
-&none  &none  &none  &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none   &kp COLON          &kp EQUAL         &kp UNDERSCORE  &none          &none  &none
-              &none  &none      &none                 &trans                 &trans    &trans  &trans             &none             &none           &none
+&none  &none  &none        &none      &kp LESS_THAN         &kp GREATER_THAN                         &kp QUESTION       &kp EXCLAMATION   &none           &none          &none  &none
+&none  &none  &kp AT       &kp POUND  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp SLASH          &kp BACKSLASH     &kp PIPE        &kp AMPERSAND  &none  &none
+&none  &none  &kp PERCENT  &kp PLUS   &kp LBKT              &kp RBKT                                 &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp ASTERISK    &kp CARET      &none  &none
+&none  &none  &kp DOLLAR   &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none   &kp COLON          &kp EQUAL         &kp UNDERSCORE  &none          &none  &none
+              &none        &none      &none                 &trans                 &trans    &trans  &trans             &none             &none           &none
             >;
         };
 
