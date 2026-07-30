@@ -28,238 +28,7 @@
         };
     };
 
-    behaviors {
-        lhrmpc: lhrmpc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LHRMPC";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "balanced";
-            hold-trigger-on-release;
-        };
-
-        rhrmpc: rhrmpc {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RHRMPC";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "balanced";
-            hold-trigger-on-release;
-        };
-
-        lhrmmac: lhrmmac {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LHRMMAC";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-            flavor = "balanced";
-            hold-trigger-on-release;
-        };
-
-        rhrmmac: rhrmmac {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RHRMMAC";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <175>;
-            flavor = "balanced";
-            hold-trigger-on-release;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        caret {
-            bindings = <&kp CARET>;
-            key-positions = <18 6>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        asterisk {
-            bindings = <&kp ASTERISK>;
-            key-positions = <20 8>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        ampersand {
-            bindings = <&kp AMPERSAND>;
-            key-positions = <7 19>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <30 31>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        colon {
-            bindings = <&kp COLON>;
-            key-positions = <44 45>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        dash {
-            bindings = <&kp MINUS>;
-            key-positions = <31 32>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <45 46>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        left_bracket {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <18 30>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        left_parenthesis {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <30 44>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        right_bracket {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <19 30>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        right_parenthesis {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <31 44>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        slash {
-            bindings = <&kp SLASH>;
-            key-positions = <18 19>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <19 20>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <20 21>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        double_quotes {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <16 17>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        less_than {
-            bindings = <&kp LESS_THAN>;
-            key-positions = <31 45>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        greater_than {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <32 45>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        exclamation_mark {
-            bindings = <&kp EXCLAMATION>;
-            key-positions = <1 13>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        at_sign {
-            bindings = <&kp AT_SIGN>;
-            key-positions = <2 14>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        hash {
-            bindings = <&kp HASH>;
-            key-positions = <3 15>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        dollar {
-            bindings = <&kp DOLLAR>;
-            key-positions = <4 16>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        percent {
-            bindings = <&kp PERCENT>;
-            key-positions = <5 17>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        plus {
-            bindings = <&kp PLUS>;
-            key-positions = <40 41>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        question_mark {
-            bindings = <&kp QUESTION>;
-            key-positions = <28 29>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <39 40>;
-            require-prior-idle-ms = <75>;
-            layers = <0 1>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -275,11 +44,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC     &mt EXCLAMATION N1  &mt AT N2        &mt HASH N3      &mt DOLLAR N4     &mt PERCENT N5                                               &mt CARET N6  &mt AMPERSAND N7   &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB     &kp Q               &kp W            &kp E            &kp R             &kp T                                                        &kp Y         &kp U              &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHIFT  &lhrmmac LCTRL A    &lhrmmac LALT S  &lhrmmac LCMD D  &lhrmmac LSHFT F  &kp G                                                        &kp H         &rhrmmac RSHIFT J  &rhrmmac RGUI K  &rhrmmac RALT L          &rhrmmac RCTRL SEMI       &kp SQT
-&kp GRAVE   &kp Z               &kp X            &kp C            &kp V             &kp B           &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N         &kp M              &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                                &kp LCTRL        &kp LALT         &kp LCMD          &mo 2           &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 3         &kp RSHIFT         &kp RCMD         &kp RALT
+&kp ESC     &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                                               &kp N6  &kp N7      &kp N8     &kp N9    &kp N0         &kp MINUS
+&kp TAB     &kp Q   &kp W      &kp E     &kp R     &kp T                                                &kp Y   &kp U       &kp I      &kp O     &kp P          &kp BSPC
+&kp LSHIFT  &kp A   &kp S      &kp D     &kp F     &kp G                                                &kp H   &kp J       &kp K      &kp L     &kp SEMICOLON  &kp SQT
+&kp GRAVE   &kp Z   &kp X      &kp C     &kp V     &kp B   &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N   &kp M       &kp COMMA  &kp DOT   &kp FSLH       &kp DELETE
+                    &kp LCTRL  &kp LALT  &kp LCMD  &mo 3   &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 2   &kp RSHIFT  &kp RCMD   &kp RALT
             >;
 
             sensor-bindings =
@@ -290,11 +59,11 @@
         linux {
             display-name = "linux";
             bindings = <
-&kp ESC    &mt EXCLAMATION N1  &mt AT_SIGN N2  &mt HASH N3     &mt DOLLAR N4    &mt PERCENT N5                                  &mt CARET N6  &mt AMPS N7       &mt ASTERISK N8  &mt LEFT_PARENTHESIS N9  &mt RIGHT_PARENTHESIS N0  &mt EQUAL MINUS
-&kp TAB    &kp Q               &kp W           &kp E           &kp R            &kp T                                           &kp Y         &kp U             &kp I            &kp O                    &kp P                     &kp BSPC
-&kp LSHFT  &lhrmpc LCTRL A     &lhrmpc LGUI S  &lhrmpc LALT D  &lhrmpc LSHFT F  &kp G                                           &kp H         &rhrmpc RSHIFT J  &rhrmpc LALT K   &rhrmpc RGUI L           &rhrmpc RCTRL SEMI        &kp SQT
-&kp GRAVE  &kp Z               &kp X           &kp C           &kp V            &kp B           &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N         &kp M             &kp COMMA        &kp DOT                  &kp FSLH                  &kp DELETE
-                               &kp LCTRL       &kp LGUI        &kp LALT         &mo 2           &kp SPACE     &kp ENTER         &mo 3         &kp RIGHT_SHIFT   &kp RCTRL        &kp RALT
+&kp ESC    &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                                  &kp N6  &kp N7           &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W      &kp E     &kp R     &kp T                                   &kp Y   &kp U            &kp I      &kp O     &kp P     &kp BSPC
+&kp LSHFT  &kp A   &kp S      &kp D     &kp F     &kp G                                   &kp H   &kp J            &kp K      &kp L     &kp SEMI  &kp SQT
+&kp GRAVE  &kp Z   &kp X      &kp C     &kp V     &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M            &kp COMMA  &kp DOT   &kp FSLH  &kp DELETE
+                   &kp LCTRL  &kp LGUI  &kp LALT  &mo 3   &kp SPACE     &kp ENTER         &mo 2   &kp RIGHT_SHIFT  &kp RCTRL  &kp RALT
             >;
 
             sensor-bindings =
@@ -305,11 +74,11 @@
         nav {
             display-name = "nav";
             bindings = <
-&kp LC(LS(SPACE))  &kp F1  &kp F2            &kp F3        &kp F4      &kp F5                                &kp F6           &kp F7             &kp F8        &kp F9           &kp F10     &kp F11
-&kp LC(LG(Q))      &none   &none             &none         &none       &none                                 &kp HOME         &kp END            &kp PAGE_UP   &kp PAGE_DOWN    &kp INSERT  &kp F12
-&caps_word         &trans  &trans            &trans        &trans      &kp ENTER                             &kp LEFT_ARROW   &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &none       &none
-&kp CAPSLOCK       &none   &none             &none         &kp DELETE  &kp BACKSPACE  &none          &none   &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_MUTE    &none            &none       &none
-                           &kp LS(LEFT_GUI)  &kp LS(LALT)  &kp LALT    &trans         &key_repeat    &trans  &trans           &none              &none         &none
+&kp LC(LS(SPACE))  &kp F1  &kp F2            &kp F3        &kp F4      &kp F5                               &kp F6           &kp F7             &kp F8        &kp F9           &kp F10     &kp F11
+&kp LC(LG(Q))      &none   &none             &none         &none       &none                                &kp HOME         &kp END            &kp PAGE_UP   &kp PAGE_DOWN    &kp INSERT  &kp F12
+&caps_word         &none   &none             &none         &none       &kp ENTER                            &kp LEFT_ARROW   &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT_ARROW  &none       &none
+&kp CAPSLOCK       &none   &none             &none         &kp DELETE  &kp BACKSPACE  &none          &none  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN  &kp C_MUTE    &none            &none       &none
+                           &kp LS(LEFT_GUI)  &kp LS(LALT)  &kp LALT    &trans         &key_repeat    &none  &trans           &none              &none         &none
             >;
 
             label = "nav";
@@ -318,11 +87,11 @@
         symbol {
             display-name = "symbol";
             bindings = <
-&none  &none  &none        &none      &kp LESS_THAN         &kp GREATER_THAN                         &kp QUESTION       &kp EXCLAMATION   &none           &none          &none  &none
-&none  &none  &kp AT       &kp POUND  &kp LEFT_BRACE        &kp RIGHT_BRACE                          &kp SLASH          &kp BACKSLASH     &kp PIPE        &kp AMPERSAND  &none  &none
-&none  &none  &kp PERCENT  &kp PLUS   &kp LBKT              &kp RBKT                                 &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp ASTERISK    &kp CARET      &none  &none
-&none  &none  &kp DOLLAR   &kp MINUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none     &none   &kp COLON          &kp EQUAL         &kp UNDERSCORE  &none          &none  &none
-              &none        &none      &none                 &trans                 &trans    &trans  &trans             &none             &none           &none
+&none  &none  &none  &none  &none           &kp LESS_THAN                           &kp GREATER_THAN       &kp PIPE   &none  &none  &none  &none
+&none  &none  &none  &none  &kp BACKSLASH   &kp LBRC                                &kp RBRC               &kp SLASH  &none  &none  &none  &none
+&none  &none  &none  &none  &kp MINUS       &kp LBKT                                &kp RBKT               &kp COLON  &none  &none  &none  &none
+&none  &none  &none  &none  &kp UNDERSCORE  &kp LEFT_PARENTHESIS  &none     &none   &kp RIGHT_PARENTHESIS  &kp EQUAL  &none  &none  &none  &none
+              &none  &none  &none           &trans                &trans    &trans  &trans                 &none      &none  &none
             >;
         };
 
