@@ -1,3 +1,3 @@
-# emreorta's ZMK config
+# zmk-config
 
-My personal config for Sofle V2 to use with Mac and Windows machines.
+My personal config for Sofle V2 to use with Linux and Mac machines.
