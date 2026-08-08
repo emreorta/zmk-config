@@ -31,17 +31,47 @@
 
     combos { compatible = "zmk,combos"; };
 
+    behaviors {
+        lhrm: lhrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Left-hand HRMs";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <55 56 57 58 59>;
+        };
+
+        rhrm: rhrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Right-hand HRMs";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <50 51 52 53 54>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         linux {
             display-name = "linux";
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                  &kp N6  &kp N7           &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                   &kp Y   &kp U            &kp I      &kp O     &kp P     &kp BSPC
-&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                   &kp H   &kp J            &kp K      &kp L     &kp SEMI  &kp SQT
-&kp GRAVE  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M            &kp COMMA  &kp DOT   &kp FSLH  &kp DELETE
-                   &kp LCMD  &kp LALT  &kp LCTRL  &mo 3   &kp SPACE     &kp ENTER         &mo 2   &kp RIGHT_SHIFT  &kp RCTRL  &kp RALT
+&kp ESC    &kp N1         &kp N2        &kp N3         &kp N4              &kp N5                                  &kp N6  &kp N7           &kp N8         &kp N9        &kp N0            &kp MINUS
+&kp TAB    &kp Q          &kp W         &kp E          &kp R               &kp T                                   &kp Y   &kp U            &kp I          &kp O         &kp P             &kp BSPC
+&kp LSHFT  &lhrm LMETA A  &lhrm LALT S  &lhrm LCTRL D  &lhrm LEFT_SHIFT F  &kp G                                   &kp H   &rhrm RSHIFT J   &rhrm RCTRL K  &rhrm RALT L  &rhrm RMETA SEMI  &kp SQT
+&kp GRAVE  &kp Z          &kp X         &kp C          &kp V               &kp B   &kp C_MUTE    &kp C_PLAY_PAUSE  &kp N   &kp M            &kp COMMA      &kp DOT       &kp FSLH          &kp DELETE
+                          &kp LCMD      &kp LALT       &kp LCTRL           &mo 3   &kp SPACE     &kp ENTER         &mo 2   &kp RIGHT_SHIFT  &kp RCTRL      &kp RALT
             >;
 
             sensor-bindings =
@@ -60,11 +90,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp ESC     &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                                               &kp N6  &kp N7      &kp N8     &kp N9    &kp N0         &kp MINUS
-&kp TAB     &kp Q   &kp W      &kp E     &kp R     &kp T                                                &kp Y   &kp U       &kp I      &kp O     &kp P          &kp BSPC
-&kp LSHIFT  &kp A   &kp S      &kp D     &kp F     &kp G                                                &kp H   &kp J       &kp K      &kp L     &kp SEMICOLON  &kp SQT
-&kp GRAVE   &kp Z   &kp X      &kp C     &kp V     &kp B   &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N   &kp M       &kp COMMA  &kp DOT   &kp FSLH       &kp DELETE
-                    &kp LCTRL  &kp LALT  &kp LCMD  &mo 3   &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 2   &kp RSHIFT  &kp RCMD   &kp RALT
+&kp ESC     &kp N1         &kp N2        &kp N3         &kp N4          &kp N5                                               &kp N6  &kp N7          &kp N8         &kp N9        &kp N0            &kp MINUS
+&kp TAB     &kp Q          &kp W         &kp E          &kp R           &kp T                                                &kp Y   &kp U           &kp I          &kp O         &kp P             &kp BSPC
+&kp LSHIFT  &lhrm LCTRL A  &lhrm LALT S  &lhrm LMETA D  &lhrm LSHIFT F  &kp G                                                &kp H   &rhrm RSHIFT J  &rhrm RMETA K  &rhrm RALT L  &rhrm RCTRL SEMI  &kp SQT
+&kp GRAVE   &kp Z          &kp X         &kp C          &kp V           &kp B   &kp C_MUTE                 &kp C_PLAY_PAUSE  &kp N   &kp M           &kp COMMA      &kp DOT       &kp FSLH          &kp DELETE
+                           &kp LCTRL     &kp LALT       &kp LCMD        &mo 3   &mt LA(LS(LCTRL)) SPACE    &kp ENTER         &mo 2   &kp RSHIFT      &kp RCMD       &kp RALT
             >;
 
             sensor-bindings =
