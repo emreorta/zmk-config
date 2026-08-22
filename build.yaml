@@ -24,3 +24,9 @@ include:
   - board: nice_nano//zmk
     shield: sofle_right
     cmake-args: -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/sofle"
+  - board: nice_nano//zmk
+    shield: corne_left
+    cmake-args: -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/corne"
+  - board: nice_nano//zmk
+    shield: corne_right
+    cmake-args: -DZMK_CONFIG="${GITHUB_WORKSPACE}/config/corne"

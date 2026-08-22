@@ -1,3 +1,3 @@
 # zmk-config
 
-My personal config for Sofle V2 to use with Linux and Mac machines.
+My very personal config for Sofle and Corne to use with Linux and Mac machines.

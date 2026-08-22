@@ -1,0 +1,348 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+&mt { flavor = "tap-preferred"; };
+
+&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE SPACE>; };
+
+/ {
+    behaviors {
+        lhrm: lhrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Left-hand HRMs";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        rhrm: rhrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Right-hand HRMs";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <36 37 38>;
+        };
+
+        thumbmt: thumb_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Thumb hold-tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+        };
+    };
+
+    macros {
+        home_prefix: home_prefix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp FSLH>;
+            label = "$HOME";
+        };
+
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "ARROW";
+        };
+
+        walrus: walrus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp EQUAL>;
+            label = "WALRUS";
+        };
+
+        gte: gte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GT &kp EQUAL>;
+            label = "GTE";
+        };
+
+        lte: lte {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp EQUAL>;
+            label = "LTE";
+        };
+
+        fat_arrow: fat_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+            label = "FAT_ARROW";
+        };
+
+        not_equal: not_equal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EXCL &kp EQUAL>;
+            label = "NOT_EQUAL";
+        };
+
+        tmux_create: tmux_create {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp C>;
+            label = "TMUX_CREATE";
+        };
+
+        tmux_detach: tmux_detach {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp D>;
+            label = "TMUX_DETACH";
+        };
+
+        tmux_rename: tmux_rename {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp COMMA>;
+            label = "TMUX_RENAME";
+        };
+
+        tmux_move: tmux_move {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp DOT>;
+            label = "TMUX_MOVE";
+        };
+
+        tmux_next: tmux_next_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp N>;
+            label = "TMUX_NEXT_WIN";
+        };
+
+        tmux_prev: tmux_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp P>;
+            label = "TMUX_PREV";
+        };
+
+        tmux_session: tmux_session {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp S>;
+            label = "TMUX_SESSION";
+        };
+
+        tmux_zoom: tmux_zoom {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp Z>;
+            label = "TMUX_ZOOM";
+        };
+
+        tmux_reload: tmux_reload {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp R>;
+            label = "TMUX_RELOAD";
+        };
+
+        tmux_paste: tmux_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp RIGHT_BRACKET>;
+            label = "TMUX_PASTE";
+        };
+
+        tmux_copy_mode: tmux_copy_mode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp ESC>;
+            label = "TMUX_COPY_MODE";
+        };
+
+        tmux_plugin_install: tmux_plugin_install {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp LS(I)>;
+            label = "TMUX_PLUGIN_INSTALL";
+        };
+
+        tmux_resurrect_save: tmux_resurrect_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp LS(S)>;
+            label = "TMUX_RESURRECT_SAVE";
+        };
+
+        tmux_resurrect_reload: tmux_resurrect_reload {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp LS(R)>;
+            label = "TMUX_RESURRECT_RELOAD";
+        };
+
+        tmux_choose_window: tmux_choose_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp W>;
+            label = "TMUX_CHOOSE_WINDOW";
+        };
+
+        tmux_fzf: tmux_fzf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp LS(F)>;
+            label = "TMUX_FZF";
+        };
+
+        tmux_vsplit: tmux_vsplit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp PERCENT>;
+            label = "TMUX_VSPLIT";
+        };
+
+        tmux_hsplit: tmux_hsplit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(S) &kp DOUBLE_QUOTES>;
+            label = "TMUX_HSPLIT";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        not_equal {
+            bindings = <&not_equal>;
+            key-positions = <1 25>;
+            layers = <0 1>;
+        };
+
+        fat_arrow {
+            bindings = <&fat_arrow>;
+            key-positions = <2 26>;
+            layers = <0 1>;
+        };
+
+        arrow {
+            bindings = <&arrow>;
+            key-positions = <3 27>;
+            layers = <0 1>;
+        };
+
+        walrus {
+            bindings = <&walrus>;
+            key-positions = <4 28>;
+            layers = <0 1>;
+        };
+
+        home_prefix {
+            bindings = <&home_prefix>;
+            key-positions = <5 29>;
+            layers = <0 1>;
+        };
+
+        lte {
+            bindings = <&lte>;
+            key-positions = <8 32>;
+            layers = <0 1>;
+        };
+
+        gte {
+            bindings = <&gte>;
+            key-positions = <9 33>;
+            layers = <0 1>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        mac {
+            display-name = "mac";
+            bindings = <
+&kp ESC     &kp Q          &kp W         &kp E         &kp R           &kp T                          &kp Y                            &kp U           &kp I         &kp O         &kp P             &kp BACKSPACE
+&lt 4 TAB   &lhrm LCTRL A  &lhrm LALT S  &lhrm LCMD D  &lhrm LSHIFT F  &kp G                          &kp H                            &rhrm RSHIFT J  &rhrm RCMD K  &rhrm RALT L  &rhrm RCTRL SEMI  &kp SINGLE_QUOTE
+&kp LSHIFT  &kp Z          &kp X         &kp C         &kp V           &kp B                          &kp N                            &kp M           &kp COMMA     &kp DOT       &kp FSLH          &mt RSHIFT TILDE
+                                         &kp LCMD      &mo 2           &thumbmt LS(LA(LCMD)) SPACE    &thumbmt LS(LA(LC(LCMD))) ENTER  &mo 3           &kp RALT
+            >;
+        };
+
+        linux {
+            display-name = "linux";
+            bindings = <
+&kp ESC     &kp Q          &kp W         &kp E          &kp R           &kp T                           &kp Y                             &kp U           &kp I          &kp O         &kp P             &kp BACKSPACE
+&lt 4 TAB   &lhrm LMETA A  &lhrm LALT S  &lhrm LCTRL D  &lhrm LSHIFT F  &kp G                           &kp H                             &rhrm RSHIFT J  &rhrm RCTRL K  &rhrm RALT L  &rhrm RMETA SEMI  &kp SINGLE_QUOTE
+&kp LSHIFT  &kp Z          &kp X         &kp C          &kp V           &kp B                           &kp N                             &kp M           &kp COMMA      &kp DOT       &kp FSLH          &mt RSHIFT TILDE
+                                         &kp LCTRL      &mo 2           &thumbmt LS(LA(LCTRL)) SPACE    &thumbmt LS(LA(LG(LCTRL))) ENTER  &mo 3           &kp RALT
+            >;
+        };
+
+        symbol {
+            display-name = "symbol";
+            bindings = <
+&kp GRAVE        &kp N1    &kp N2        &kp N3      &kp N4       &kp N5       &kp N6                &kp N7                 &kp N8          &kp N9           &kp N0             &kp BACKSPACE
+&kp EXCLAMATION  &kp AT    &kp HASH      &kp DOLLAR  &kp PERCENT  &kp MINUS    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE
+&kp CARET        &kp AMPS  &kp ASTERISK  &kp PLUS    &kp BSLH     &kp UNDER    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON       &kp EQUAL        &kp QUESTION       &kp PIPE
+                                         &trans      &trans       &trans       &trans                &trans                 &trans
+            >;
+        };
+
+        nav {
+            display-name = "nav";
+            bindings = <
+&tmux_copy_mode         &kp LA(LS(Q))        &kp LA(LS(W))         &kp LA(LS(E))  &tmux_reload  &tmux_vsplit    &kp HOME    &kp END     &kp PG_UP     &kp PG_DN   &kp DELETE         &kp BACKSPACE
+&tmux_resurrect_reload  &tmux_choose_window  &tmux_session         &tmux_detach   &tmux_fzf     &tmux_hsplit    &kp LEFT    &kp DOWN    &kp UP        &kp RIGHT   &kp C_VOLUME_UP    &caps_word
+&tmux_resurrect_save    &tmux_zoom           &tmux_plugin_install  &tmux_create   &none         &tmux_paste     &tmux_next  &tmux_prev  &tmux_rename  &tmux_move  &kp C_VOLUME_DOWN  &mt C_MUTE C_PLAY_PAUSE
+                                                                   &trans         &trans        &trans          &trans      &trans      &trans
+            >;
+        };
+
+        func {
+            display-name = "func";
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &to 2     &to 0   &trans  &trans  &trans   &trans   &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        adjust {
+            display-name = "adjust";
+            bindings = <
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans         &trans       &trans  &trans  &trans  &trans  &trans
+&bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &bootloader    &bootloader  &trans  &trans  &trans  &trans  &ext_power EP_TOG
+&bt BT_CLR     &trans         &trans         &trans         &trans         &sys_reset     &sys_reset   &trans  &trans  &trans  &trans  &out OUT_TOG
+                                             &trans         &trans         &to 1          &to 0        &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        adjust {
+            if-layers = <3 2>;
+            then-layer = <5>;
+        };
+    };
+};

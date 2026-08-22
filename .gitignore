@@ -1,0 +1,10 @@
+.west/
+bootloader/
+builds/
+modules/
+optional/
+tools/
+zmk/
+
+zephyr/*
+!zephyr/module.yml
